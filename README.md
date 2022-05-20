@@ -10,6 +10,10 @@ A lot of this was made possible by suggestions from [n00b78](https://github.com/
 - Updated nfs_server.yaml to use ansible_facts for the server IP
 - Updated to openjdk-11-jdk 
 
+This was developed and tested on MacOS Monterey (12.4)
+- Vagrant Version: 2.2.19
+- Virtualbox Version: 6.1.34r150636
+
 Everything below this point is the original README.md. Please note, the code in the original README.md has not been updated. If I get more interest in this, or more free time, I'll consider updating the rest of this file. 
 
 # End-to-end automated environment with Vagrant, Ansible, Docker, Jenkins, and GitLab.
