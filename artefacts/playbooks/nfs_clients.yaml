@@ -1,8 +1,8 @@
 ---
-- name: Installing NFS Client 
-  hosts: nfs-clients
+- name: Installing NFS Client
+  hosts: nfs_clients
   become: true
-  
+
   vars:
     nfsserver: 192.168.99.150
     nfs_mountpoint: /nfs
@@ -16,5 +16,8 @@
       file: path={{ nfs_mountpoint }} state=directory mode=777 owner=root group=root
 
     - name: set mountpoints
-      mount: name={{ nfs_mountpoint }} src={{ nfsserver }}:{{ nfsexport }} fstype=nfs opts=defaults,nobootwait dump=0 passno=2 state=mounted
-
+      mount:
+        path={{ nfs_mountpoint }}
+        src={{ nfsserver }}:{{ nfsexport }}
+        fstype=nfs
+        state=mounted

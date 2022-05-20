@@ -1,6 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 # Use config.yaml for basic VM configuration.
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
 
 require 'yaml'
 dir = File.dirname(File.expand_path(__FILE__))

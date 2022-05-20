@@ -5,6 +5,11 @@
   become: true
   
   tasks:
+    - name: Install Java
+      apt:
+        name: openjdk-11-jdk
+        state: present
+
     - name: Ensure the jenkins apt repository key is installed
       apt_key: 
         url: https://pkg.jenkins.io/debian-stable/jenkins.io.key

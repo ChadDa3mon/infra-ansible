@@ -1,0 +1,34 @@
+---
+- name: Initial Ansible Configuration
+  hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: Add vagrant user to sudoers
+      ansible.builtin.lineinfile:
+        path: /etc/sudoers
+        regexp: '^vagrant'
+        line: 'vagrant        ALL=(ALL)       NOPASSWD: ALL'
+
+    - name: Generate an OpenSSH keypair with the default values (4096 bits, rsa)
+      community.crypto.openssh_keypair:
+        path: ~vagrant/.ssh/id_rsa
+        group: vagrant
+        owner: vagrant
+
+    - name: Replace /etc/hosts
+      ansible.builtin.copy:
+        src: ~vagrant/templates/etc_hosts
+        dest: /etc/hosts
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Replace /etc/ansible/hosts
+      ansible.builtin.copy:
+        src: ~vagrant/templates/ansible_hosts
+        dest: /etc/ansible/hosts
+        owner: root
+        group: root
+        mode: '0644'

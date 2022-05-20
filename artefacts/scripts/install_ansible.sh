@@ -38,5 +38,5 @@ sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
 #echo 'APT::Periodic::Enable "0";' >> /etc/apt/apt.conf.d/10periodic
 
 # generating password configuration on ansible server to later access remote servers
-echo vagrant | sudo -S su - vagrant -c "ssh-keygen -t rsa -f /home/vagrant/.ssh/id_rsa -q -P ''"
+#echo vagrant | sudo -S su - vagrant -c "ssh-keygen -t rsa -f /home/vagrant/.ssh/id_rsa -q -P ''"
 

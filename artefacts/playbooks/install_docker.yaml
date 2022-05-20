@@ -4,7 +4,7 @@
   become: true
 
   vars:
-    ansible_distribution_release: trusty
+    ansible_distribution_release: focal
     theuser: vagrant
 
   tasks:
@@ -39,7 +39,7 @@
       state: present
       update_cache: yes
       
-  - name: add docker goup
+  - name: add docker group
     user:
       name: "{{ theuser }}"
       append: yes

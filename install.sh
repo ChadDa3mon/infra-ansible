@@ -1,6 +1,6 @@
 #!/bin/sh
 
 clear
-echo `date --rfc-3339=seconds`
+echo `date`
 vagrant up --provider=virtualbox
-echo `date --rfc-3339=seconds`
+echo `date`
