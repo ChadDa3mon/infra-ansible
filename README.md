@@ -1,3 +1,17 @@
+# Giving Credit Where Credit is Due
+This is an update to the original [infra-ansible](https://github.com/ernesen/infra-ansible) written back in 2019 and associated with this excellent [article on medium.com](https://medium.com/design-and-tech-co/end-to-end-automated-environment-with-vagrant-ansible-docker-jenkins-and-gitlab-32bb91fbee40). 
+
+As someone looking to better learn Ansible and Vagrant, I took it upon myself to update this for the year 2022 since the original code no longer works. 
+
+## Updates
+A lot of this was made possible by suggestions from [n00b78](https://github.com/n00b78) in his [issue](https://github.com/ernesen/infra-ansible/issues/2) for improvement.
+- Updated box to bento/ubuntu-20.04
+- Moved large parts of configure_ansible.sh and install_ansible.sh to a new file - configure_ansible.yaml
+- Updated nfs_server.yaml to use ansible_facts for the server IP
+- Updated to openjdk-11-jdk 
+
+Everything below this point is the original README.md. Please note, the code in the original README.md has not been updated. If I get more interest in this, or more free time, I'll consider updating the rest of this file. 
+
 # End-to-end automated environment with Vagrant, Ansible, Docker, Jenkins, and GitLab.
 
 Ansible is a beautifully simple agentless (and serverless) **Configuration Management** (CM) tool for configuration management, provisioning, and deployment. Its strength is the agentless nature that makes it simple and powerful. Configuration Management refers to the process of systematically handling changes to a system in a way that it maintains integrity over time, also known as idempotent. Like most of the Idempotent Infrastructure tools (no matter how many times you call the operation, the result will be the same, unless a change needs to be made.), it provides the ability through declarative language to describe system configuration; Ansible uses YAML (YAML Ain't Markup Language) is a human-readable data serialization language syntax for expressing **Ansible Playbooks**. Ansible Playbooks are the building blocks for all the use cases of Ansible. The different YAML tags are classified into four types knows as declaration, vars, tasks, and handlers; through this article, we will take a practical approach in describing each one.
